@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "Video games",
+      "body": "Advantages and Disadvantages....",
+      "author": "mario",
+      "id": 3
+    },
+    {
+      "title": "Reading Books",
+      "body": "Advantages...",
+      "author": "yoshi",
+      "id": 4
+    },
+    {
+      "title": "Electronic Gadjets",
+      "body": "Advantages and disadvantages.....",
+      "author": "yoshi",
+      "id": 5
+    }
+  ]
+}
