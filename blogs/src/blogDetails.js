@@ -5,9 +5,9 @@ import useAxios from "./useAxios";
 const BlogDetails = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    const { data:blog, isLoading, error} = useAxios('http://localhost:5000/api/blogs/details',{ blogId: location.state.id})
+    const { data:blog, isLoading, error} = useAxios('https://blogs-app-p47g.onrender.com/api/blogs/details',{ blogId: location.state.id})
     const handleDelete =() => {
-        axios.post('http://localhost:5000/api/blogs/delete',{ blogId:location.state.id})
+        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/delete',{ blogId:location.state.id})
         .then(()=>{
             navigate('/')
         })

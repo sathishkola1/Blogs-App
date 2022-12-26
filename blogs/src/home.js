@@ -2,7 +2,7 @@ import BlogList from './bloglist';
 import useFetch from './useAxios';
 
 const Home = () => {
-    const { data , isLoading , error } = useFetch('http://localhost:5000/api/blogs')
+    const { data , isLoading , error } = useFetch('https://blogs-app-p47g.onrender.com/api/blogs')
 
     return (
         <div className="home">

@@ -13,7 +13,7 @@ const Create = () => {
         e.preventDefault()
         setIsLoading(true)
         const blog = { title,body }
-        axios.post('http://localhost:5000/api/blogs/create',blog)
+        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/create',blog)
         .then(()=>{
             setIsLoading(false)
             navigate('/')
