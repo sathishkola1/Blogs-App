@@ -7,11 +7,22 @@ const useAxios = (url,body) => {
 
     useEffect(()=> {
       let promise
+      let token = localStorage.getItem('user')
       if(body){ 
-        promise = axios.post(url,body)
+        promise = axios.post(url,body,{
+          headers:{
+              'Content-Type':'application/json',
+              'Authorization':`Bearer ${token}`
+          }
+      })
       }
       else{
-        promise = axios.get(url)
+        promise = axios.get(url,{
+          headers:{
+              'Content-Type':'application/json',
+              'Authorization':`Bearer ${token}`
+          }
+      })
       }
       promise.then((data) => {
         setData(data.data)

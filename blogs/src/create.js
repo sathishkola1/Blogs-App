@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from './navbar'
 
 const Create = () => {
     const [title,setTitle] = useState('')    
@@ -13,10 +14,16 @@ const Create = () => {
         e.preventDefault()
         setIsLoading(true)
         const blog = { title,body }
-        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/create',blog)
+        const token = localStorage.getItem('user')
+        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/create',blog,{
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization':`Bearer ${token}`
+            }
+        })
         .then(()=>{
             setIsLoading(false)
-            navigate('/')
+            navigate('/home')
         })
         .catch((err)=>{
             alert("Cannot create blog")
@@ -24,6 +31,8 @@ const Create = () => {
     }
 
     return ( 
+        <>
+        <Navbar/>
         <div className="create">
             <h2>New Blog</h2>
             <form onSubmit={handleSubmit}>
@@ -52,6 +61,7 @@ const Create = () => {
                   { isLoading && <button disabled>Adding Blog...</button>}
             </form>
         </div>
+        </>
      );
 }
  

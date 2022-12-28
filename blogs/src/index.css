@@ -9,14 +9,14 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
   color:violet;
 }
-.navbar .links {
+.logout:last-child{
   margin-left: auto;
 }
 .navbar a {
@@ -27,8 +27,16 @@
 .navbar a:hover {
   color: violet;
 }
+.home{
+  margin: 40px 0px;
+}
 .content {
-  max-width: 900px;
+  max-width: 100%;
+  /* margin: 0px auto; */
+  padding: 20px;
+}
+.home{
+  max-width: 700px;
   margin: 40px auto;
   padding: 20px;
 }
@@ -49,6 +57,11 @@
 /* .blog-preview a{
   text-decoration: none;
 } */
+.blog-details{
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
 .blog-details h2 {
   font-size: 20px;
   color: rgb(140, 223, 244);
@@ -67,7 +80,7 @@
 }
 .create {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 40px auto;
   text-align: center;
 }
 .create label {
@@ -95,6 +108,17 @@
   border-radius: 8px;
   cursor: pointer;
 } 
+.footer{
+  padding: 20px;
+}
+#register{
+  font-size: 45px;
+  font-weight: 900;
+}
+#signIn{
+  margin-left: 10px;
+  text-decoration: none;
+}
 .notFound{
   padding: 10px;
 }

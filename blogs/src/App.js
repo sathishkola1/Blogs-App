@@ -4,21 +4,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Create from './create';
 import BlogDetails from './blogDetails';
 import NotFound from './notFound';
+import Register from './register';
+import Login from './login';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar/>
+        
+        
         <div className='content'>
           <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/Register' element={<Register/>} />
+          <Route path='/' element={<Login/>} />
+          <Route path='/home' element={<Home/>} />
           <Route path='/create' element={<Create/>} />
           <Route path='/blogs' element={<BlogDetails/>} />
           <Route path='*' element={<NotFound/>} />
           </Routes>
         </div>
-      </div>
     </Router>
   );
 }
