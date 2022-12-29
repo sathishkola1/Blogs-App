@@ -9,7 +9,7 @@ const Create = () => {
     // const [author,setAuthor] = useState('mario')
     const [isLoading,setIsLoading] = useState(false)
     const navigate = useNavigate()
-    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
+    let url = process.env.REACT_APP_ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
 
     const handleSubmit = (e) => {
         e.preventDefault()

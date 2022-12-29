@@ -10,7 +10,7 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     let navigate = useNavigate()
-    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
+    let url = process.env.REACT_APP_ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
 
     const handleSubmit = async (e) => {
         e.preventDefault()

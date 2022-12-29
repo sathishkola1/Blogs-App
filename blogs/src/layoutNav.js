@@ -7,7 +7,7 @@ const LayoutNav = () => {
 
     useEffect(()=>{
         let token = localStorage.getItem('user')
-        let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
+        let url = process.env.REACT_APP_ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
         if(token){
             axios.get(`${url}/api/user/verify`,{
                 headers:{

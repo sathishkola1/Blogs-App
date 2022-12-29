@@ -4,7 +4,7 @@ import useAxios from "./useAxios";
 import Navbar from './navbar'
 
 const BlogDetails = () => {
-    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
+    let url = process.env.REACT_APP_ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
     const navigate = useNavigate()
     const location = useLocation()
     const { data:blog, isLoading, error} = useAxios(`${url}/api/blogs/details`,{ 'blogId': location.state.id})
