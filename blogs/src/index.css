@@ -54,9 +54,6 @@
   color: rgb(140, 223, 244);
   margin-bottom: 8px;
 }
-/* .blog-preview a{
-  text-decoration: none;
-} */
 .blog-details{
   max-width: 700px;
   margin: 40px auto;
@@ -115,6 +112,10 @@
   font-size: 45px;
   font-weight: 900;
 }
+#logIn{
+  font-size: 45px;
+  font-weight: 900;
+}
 #signIn{
   margin-left: 10px;
   text-decoration: none;
@@ -126,5 +127,9 @@
   padding-bottom: 25px;
   font-weight: 900;
   font-size: 50px;
+  color: red;
+}
+.logout:hover{
+  cursor: pointer;
   color: red;
 }

@@ -4,12 +4,13 @@ import useAxios from "./useAxios";
 import Navbar from './navbar'
 
 const BlogDetails = () => {
+    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
     const navigate = useNavigate()
     const location = useLocation()
-    const { data:blog, isLoading, error} = useAxios('https://blogs-app-p47g.onrender.com/api/blogs/details',{ 'blogId': location.state.id})
+    const { data:blog, isLoading, error} = useAxios(`${url}/api/blogs/details`,{ 'blogId': location.state.id})
     const handleDelete =() => {
         let token = localStorage.getItem('user')
-        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/delete',{ blogId:location.state.id},{
+        axios.post(`${url}/api/blogs/delete`,{ blogId:location.state.id},{
             headers:{
                 'Content-Type':'application/json',
                 'Authorization':`Bearer ${token}`

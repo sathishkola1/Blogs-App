@@ -9,13 +9,14 @@ const Create = () => {
     // const [author,setAuthor] = useState('mario')
     const [isLoading,setIsLoading] = useState(false)
     const navigate = useNavigate()
+    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsLoading(true)
         const blog = { title,body }
         const token = localStorage.getItem('user')
-        axios.post('https://blogs-app-p47g.onrender.com/api/blogs/create',blog,{
+        axios.post(`${url}/api/blogs/create`,blog,{
             headers:{
                 'Content-Type':'application/json',
                 'Authorization':`Bearer ${token}`

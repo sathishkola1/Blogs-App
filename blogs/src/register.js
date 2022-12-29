@@ -10,6 +10,7 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     let navigate = useNavigate()
+    let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -18,8 +19,9 @@ const Register = () => {
             setIsLoading(false)
             alert('Passwords do not match')
         } else {
+            try{
             let data = await axios.post(
-                'https://blogs-app-p47g.onrender.com/api/user/signup',
+                `${url}/api/user/signup`,
                 { 'email': email, 'password': password, 'name': name },
                 {
                     headers: {
@@ -28,10 +30,10 @@ const Register = () => {
                 }
             )
             setIsLoading(false)
-            if (data.status == 201) {
-                navigate('/', { replace: true })
+            navigate('/', { replace: true })
             }
-            else {
+           catch(err){
+                setIsLoading(false)
                 navigate('/register', { replace: true })
             }
         }

@@ -1,24 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
 const Navbar = () => {
-    // const [user, setUser] = useState(localStorage.getItem('user'))
     const navigate = useNavigate()
-
-    // useEffect(()=>{
-    //     if(!user){
-    //         logoutHandler()
-    //     }
-
-    // },[user])
 
     useEffect(()=>{
         let token = localStorage.getItem('user')
+        let url = process.env.ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
         if(!token){
             navigate('/',{replace:true})
             return
         }
-        // check().then().catch()
+        axios.get(`${url}/api/user/verify`,{
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization':`Bearer ${token}`
+            }
+        }).then(()=>{})
+         .catch(()=>{
+            navigate('/',{replace:true})
+        })
     },[])
 
     const logoutHandler = ()=>{

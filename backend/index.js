@@ -142,6 +142,15 @@ app.post('/api/user/logout',auth,async(req,res)=>{
     }
 })
 
+app.get('/api/user/verify',auth,async(req,res)=>{
+    try{
+    res.send({msg:"Authentication successfull"})
+    }
+    catch(err){
+        res.status(400).send({Error:"Error Authenticating!"})
+    }
+})
+
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '../blogs/build/index.html'));
 })
