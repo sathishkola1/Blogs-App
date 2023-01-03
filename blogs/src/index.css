@@ -119,6 +119,7 @@
 #signIn{
   margin-left: 10px;
   text-decoration: none;
+  color: violet;
 }
 .notFound{
   padding: 10px;
@@ -132,4 +133,53 @@
 .logout:hover{
   cursor: pointer;
   color: red;
+}
+#alert{
+  display: flex;
+  margin: 10px auto;
+  max-width: 500px;
+  border: 1px solid #F5C6CB;
+  padding: 20px;
+  height: 10px;
+  background:#F8D7DA;
+  border-radius: 5px;
+  align-items: center;
+}
+.message{
+  color: #8B3E46;
+}
+#buttons{
+  width: 50%;
+  margin-top: 10px;
+}
+#forgotPassword{
+  margin-bottom: 10px;
+  text-decoration: underline;
+  color: #0000EE;
+  cursor: pointer;
+}
+#errorMsg{
+  position: relative;
+}
+#errorMsg>div{
+  position: absolute;
+  top: 65px;
+  left: 10px;
+  color: red;
+}
+#registerButton{
+  width: 50%;
+  margin-top: 30px;
+}
+#goBack{
+  margin-top: 10px;
+}
+#clickHere{
+  margin-left: 8px;
+  text-decoration: none;
+  color: violet;
+}
+.otpVerify input{
+  width: 40%;
+  margin: 10px auto;
 }

@@ -6,6 +6,9 @@ import BlogDetails from './blogDetails';
 import NotFound from './notFound';
 import Register from './register';
 import Login from './login';
+import EmailVerification from './emailVerification';
+import ChangePassword from './changePassword';
+import AccountVerification from './accountVerification';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route path='/home' element={<Home/>} />
           <Route path='/create' element={<Create/>} />
           <Route path='/blogs' element={<BlogDetails/>} />
+          <Route path='/emailVerification' element={<EmailVerification/>} />
+          <Route path='/changePassword' element={<ChangePassword/>} />
+          <Route path='/accountVerification' element={<AccountVerification/>} />
           <Route path='*' element={<NotFound/>} />
           </Routes>
         </div>

@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const LayoutNav = () => {
     const navigate = useNavigate()
+    localStorage.removeItem('userId')
 
     useEffect(()=>{
         let token = localStorage.getItem('user')

@@ -5,7 +5,7 @@ let auth=async(req,res,next)=>{
     try {
         let token=req.header('Authorization').replace('Bearer ','')
         let decoded=jwt.verify(token,process.env.JWT_SECRET)
-        let query = 'SELECT name,user_id FROM users WHERE user_id=? AND token=?'
+        let query = 'SELECT name,users.user_id FROM users JOIN tokens ON users.user_id=tokens.user_id WHERE users.user_id=? AND token=?'
         let params = [decoded.id,token]
         let results = await db.promise(query, params)
         results = JSON.parse(JSON.stringify(results))

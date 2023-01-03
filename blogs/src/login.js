@@ -15,15 +15,8 @@ const Login = () => {
         e.preventDefault()
         setIsLoading(true)
         try {
-            let { data } = await axios.post(
-                `${url}/api/user/login`,
-                { 'email': email, 'password': password },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-            )
+            let { data } = await axios.post(`${url}/api/user/login`,
+                { 'email': email, 'password': password })
             setIsLoading(false)
             let token = data.token
             localStorage.setItem('user', token)
@@ -34,6 +27,10 @@ const Login = () => {
             navigate('/', { replace: true })
             alert("Invalid credentials")
         }
+    }
+
+    const handleForgotPassword=()=>{
+        navigate('/emailVerification',{replace:true})
     }
 
     return (
@@ -56,10 +53,11 @@ const Login = () => {
                         value={password}
                         onChange={(e) => { setPassword(e.target.value) }}
                     />
-                    {!isLoading && <button>LogIn</button>}
-                    {isLoading && <button disabled>Please wait...</button>}
+                    {!isLoading && <button id="buttons">LogIn</button>}
+                    {isLoading && <button id="buttons" disabled>Please wait...</button>}
                 </form>
                 <div className="footer">
+                    <div id="forgotPassword" onClick={()=>{handleForgotPassword()}}>Forgot Password?</div>
                     Don't Have an account?<Link id="signIn" to="/Register">Register</Link>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const Navbar = () => {
     const navigate = useNavigate()
+    localStorage.removeItem('userId')
 
     useEffect(()=>{
         let token = localStorage.getItem('user')
