@@ -9,8 +9,6 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
     let navigate = useNavigate()
     let url = process.env.REACT_APP_ENVIRONMENT=="PRODUCTION"?"https://blogs-app-p47g.onrender.com":"http://localhost:5000"
-    console.log("home",url,process.env.REACT_APP_ENVIRONMENT)
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)

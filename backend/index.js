@@ -76,7 +76,6 @@ app.post('/api/user/signup', async (req, res) => {
         res.status(201).send({ msg: "otp sent successfully", userId})
     }
     catch (err) {
-        console.log(err)
         res.status(400).send({ Error: "Unable to register!" })
     }
 })
